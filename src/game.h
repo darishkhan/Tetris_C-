@@ -10,16 +10,20 @@ public:
     std::vector<Block> GetAllBlocks();
     void Draw();
     void HandleInput();
-    void MoveBlockLeft();
-    void MoveBlockRight();
     void MoveBlockDown();
-    Grid grid;
+    bool gameOver;
+    int score = 0;
 
 private:
     bool IsBlockOutside();
     void RotateBlock();
     void LockBlock();
+    void MoveBlockLeft();
+    void MoveBlockRight();
     bool BlockFits();
+    void Reset();
+    void UpdateScore(int linesCleared, int movedDownPoints);
+    Grid grid;
     std::vector<Block> blocks;
     Block currentBlock;
     Block nextBlock;
