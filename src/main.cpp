@@ -26,6 +26,7 @@ int main()
 
     while (WindowShouldClose() == false)
     {
+        UpdateMusicStream(game.music);
         game.HandleInput();
         if (EventTriggered(0.2))
         {
@@ -38,11 +39,11 @@ int main()
         if (game.gameOver)
         {
             DrawTextEx(font, "Game\n\n\nOver!", {335, 450}, 65, 5, ORANGE);
+            DrawTextEx(font, "Press any key\nto restart", {335, 570}, 20, 1, WHITE);
         }
 
         char scoreText[10];
         sprintf(scoreText, "%d", game.score);
-        // std::cout << scoreText << "\n";
         Vector2 textSize = MeasureTextEx(font, scoreText, 38, 2);
         DrawRectangleRounded({320, 55, 170, 60}, 0.3, 6, lightGreen);
         DrawTextEx(font, scoreText, {320 + (170 - textSize.x) / 2, 65}, 38, 2, BLACK);

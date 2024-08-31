@@ -6,6 +6,7 @@ class Game
 {
 public:
     Game();
+    ~Game();
     Block GetRandomBlock();
     std::vector<Block> GetAllBlocks();
     void Draw();
@@ -13,6 +14,7 @@ public:
     void MoveBlockDown();
     bool gameOver;
     int score = 0;
+    Music music;
 
 private:
     bool IsBlockOutside();
@@ -27,4 +29,6 @@ private:
     std::vector<Block> blocks;
     Block currentBlock;
     Block nextBlock;
+    Sound rotateSound;
+    Sound clearSound;
 };
