@@ -141,7 +141,7 @@ void Game::RotateBlock()
     {
         currentBlock.UndoRotaion();
     }
-    else 
+    else
     {
         PlaySound(rotateSound);
     }
@@ -161,7 +161,7 @@ void Game::LockBlock()
     }
     nextBlock = GetRandomBlock();
     int rowsCleared = grid.ClearFullRows();
-    if(rowsCleared)
+    if (rowsCleared)
     {
         PlaySound(clearSound);
         UpdateScore(rowsCleared, 0);

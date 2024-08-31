@@ -69,12 +69,12 @@ int Grid::ClearFullRows()
     int completed = 0;
     for (int row = numRows - 1; row >= 0; row--)
     {
-        if(IsRowFull(row))
+        if (IsRowFull(row))
         {
             ClearRow(row);
             completed++;
         }
-        else if(completed>0)
+        else if (completed > 0)
         {
             MoveRowDown(row, completed);
         }
